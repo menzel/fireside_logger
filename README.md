@@ -7,8 +7,14 @@ I use the data logger for hiking trips, it will try to get sunrise an sunset tim
 # Usage
 
 ./plot_recent.py CMD
+
 CMD: help, save, plot reset
 
-save stores the data in ~/Desktop/elitech_fromdate_todate
-plot opens the plotted temperature curve in an external window
-reset removes all data from the device 
+* save stores the data in ~/Desktop/elitech_fromdate_todate
+* plot opens the plotted temperature curve in an external window
+* reset removes all data from the device 
+
+
+# Example
+
+![Example](temp.png)
