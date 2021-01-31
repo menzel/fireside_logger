@@ -15,6 +15,18 @@ CMD: help, save, plot reset
 * reset removes all data from the device 
 
 
+The device should be /dev/ttyUSB0 if your logger is somewhere else, change line 18 
+
+You need the following packages for it to work:
+
+* numpy
+* matplotlib
+* elitech
+* seaborn
+* datetime
+* astral
+
+
 # Example
 
 ![Example](temp.png)
