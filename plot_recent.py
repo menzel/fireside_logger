@@ -58,7 +58,7 @@ elif cmd == "save":
 
     desktop = os.path.expanduser("~/Desktop")
 
-    with open(desktop + "/fireside_" + dat[0][0] + "_" + dat[0][2], "w") as sv:
+    with open(desktop + "/elitech_" + dat[0][0] + "_" + dat[0][2], "w") as sv:
         for line in dat:
             sv.write(str(line))
 
@@ -81,7 +81,7 @@ elif cmd == "plot":
 
     plt.xticks([x for x in range(0, len(dat),len(dat)//xlabc)],[dat[d][0][:-3] for d in range(0,len(dat),len(dat)//xlabc)], rotation='vertical') 
     plt.ylabel("Temp. (C)")
-    plt.yticks(list(range(int(minval)-3,int(maxval)+3,1)))
+    plt.yticks(list(range(int(minval)-3,max(1,int(maxval)+3),1)))
 
     # Max/Min lines
     plt.axhline(maxval,0,0.01, c='#ccccff', linewidth=1, linestyle="--")
@@ -120,7 +120,7 @@ elif cmd == "plot":
                 break 
 
         # add to plot
-        darkness = patches.Rectangle((dusk,minval-3),dawn,abs(minval-3)+maxval+3,facecolor=color) 
+        darkness = patches.Rectangle((dusk,minval-3),dawn,abs(minval-3)+max(1,maxval+3),facecolor=color) 
         ax.add_patch(darkness)
 
     add_darkness(plt.gca(),dat, "sunset", "sunrise")
